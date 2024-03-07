@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Marathon Skills 2015 - Find out more information";
+}
+
+<link href="~/Styles/assets.css" rel="stylesheet" />
+
+<div>
+    @* Margin: Top Right Bottom Left *@
+    <button id="MenuBtn" type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px;"
+            onclick="location.href='@Url.Action("Index", "Home")'">
+        Back
+    </button>
+</div>
+
+<h2 style="text-align: center;">Find out more information</h2>
+
+<div class="row1">
+    <div class="col half">
+        <button id="MenuBtn" type="button" style="font-style:italic" onclick="location.href=
+                '@Url.Action("AboutMS2015Page", "Page")'">Marathon Skills 2015</button>
+        <br /><br />
+
+        <button id="MenuBtn" type="button" style="font-style:italic">Previous race results</button>
+        <br /><br />
+
+        <button id="MenuBtn" type="button" style="font-style:italic">BMI calculator</button>
+        <br /><br />
+    </div>
+
+    <div class="col half">
+        <button id="MenuBtn" type="button" style="font-style:italic">How long is a marathon?</button>
+        <br /><br />
+
+        <button id="MenuBtn" type="button" style="font-style:italic" onclick="location.href=
+                '@Url.Action("ListCharities", "Page")'">
+            List of charities
+        </button>
+        <br /><br />
+
+        <button id="MenuBtn" type="button" style="font-style:italic">BMR Calculator</button>
+        <br /><br />
+
+        @*<button id="MenuBtn" type="button" style="font-style:italic" onclick="location.href=
+                    '@Url.Action("CoordSponsorOverview", "Page")'">
+                Sponsorship
+            </button>*@
+    </div>
+</div>
+@for (int i = 0; i <= 8; i++)
+{
+    <br />
+}

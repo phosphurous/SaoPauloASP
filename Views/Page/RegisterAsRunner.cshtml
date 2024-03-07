@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "Marathon Skills 2015 - Register as a runner";
+}
+
+<link href="~/Styles/assets.css" rel="stylesheet" />
+
+<div>
+    @* Margin: Top Right Bottom Left *@
+    <button id="MenuBtn" type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px;"
+            onclick="location.href='@Url.Action("Index", "Home")'">
+        Back
+    </button>
+</div>
+
+<h2 style="text-align: center;">Register as a runner</h2>
+
+<p style="text-align: center;">Please fill out all of the following information to be registered as a runner.</p>
+
+<div class="row1">
+    @{
+        //bool a = false;
+        //if (a == true)
+        //{
+
+        //}
+        <form id="frmRegister" method="POST">
+            <br />
+            <div class="col half" style="float: left; vertical-align: middle;">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="Email">Email: </label><span class="val_Email"></span>
+                        </td>
+                        <td>
+                            <input placeholder="Email address" title="E.g. abc@gmail.com"
+                                   type="text" name="Email" value="" id="Email" class="txt-fld"
+                                   required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Password">Password: </label><span class="val_password"></span>
+                        </td>
+                        <td>
+                            @* FOR Password (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars):
+                                (?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$ *@
+                            <input placeholder="Password" pattern="(?=^.{6,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z]).*$"
+                                   type="password" name="Password" value="" id="Password" class="txt-fld"
+                                   title="1 Uppercase, 1 Number, 1 Special Character,
+                                       Minimum 6 characters E.g. aB1!" required />
+                        </td>
+                    </tr>
+                    @*<tr>
+                        <td>
+                            <label for="password2">Password Again: </label><span class="val_password2"></span>
+                        </td>
+                        <td>
+                            <input placeholder="Re-enter password"
+                                   type="password" name="password2" value="" id="password2"
+                                   class="txt-fld" required />
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <td>
+                            <label for="FirstName">First Name: </label><span class="val_FirstName"></span>
+                        </td>
+                        <td>
+                            <input placeholder="First name"
+                                   type="text" name="FirstName" value="" id="FirstName" class="txt-fld"
+                                   required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="LastName">Last Name: </label><span class="val_LastName"></span>
+                        </td>
+                        <td>
+                            <input placeholder="Last name"
+                                   type="text" name="LastName" value="" id="LastName" class="txt-fld"
+                                   required />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col half" style="float: right;">
+                <table>
+                    @*<tr>
+                        <td>
+                            <label for="Gender">Gender: </label><span class="val_gender"></span>
+                        </td>
+                        <td>
+                            <select>
+                                <option>Test</option>
+                            </select>
+                            @Html.DropDownList("Genders", ViewBag.genderList as SelectList)
+                        </td>
+                    </tr>*@
+                    @*<tr>
+                        <td>
+                            <label for="DateOfBirth">Date of Birth: </label><span class="val_dob"></span>
+                        </td>
+                        <td>
+                            <input placeholder="1978-07-16"
+                                   type="text" name="DateOfBirth" value="" id="DateOfBirth"
+                                   class="txt-fld" required />
+                        </td>
+                    </tr>*@
+                    @*<tr>
+                        <td>
+                            <label for="CountryCode">Country: </label><span class="val_country"></span>
+                        </td>
+                        <td>
+                            <select>
+                                <option>SIN</option>
+                            </select>
+                            @Html.DropDownList("Countries", ViewBag.countryList as SelectList)
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <td>
+                            <label for="RoleId">Role:</label>
+                        </td>
+                        <td>
+                            <Select>
+                                <option>R</option>
+                            </Select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            @for (int i = 0; i <= 9; i++)
+            {
+                <br />
+            }
+
+            <button id="btn2" type="submit">Register</button>
+        </form>
+
+        <button id="btn2" type="button" onclick="location.href=
+            '@Url.Action("Index", "Home")'">
+            Cancel
+        </button>
+    }
+</div>
+
+
+@for (int i = 0; i <= 8; i++)
+{
+    <br />
+}
+

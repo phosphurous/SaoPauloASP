@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Marathon Skills 2015 - About Marathon Skills 2015";
+}
+
+<link href="~/Styles/assets.css" rel="stylesheet" />
+
+<div>
+    @* Margin: Top Right Bottom Left *@
+    <button id="MenuBtn" type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px;"
+            onclick="location.href='@Url.Action("Index", "Home")'">
+        Back
+    </button>
+</div>
+
+<h2 style="text-align: center;">About Marathon Skills 2015</h2>
+<br />
+
+<div class="row1">
+    <div class="col half" style="float:left">
+        <button type="button" style="font-size:18px; padding-top:10px; width: 410px; height: 150px;
+background-image: url(../../Pics/marathon-skills-2015-marathon-map.jpg);" onclick="location.href=
+            '@Url.Action("IMapPage", "Page")'" >
+            Marathon map
+            <p style="font-style:italic; font-size:12px"><br />(Click to view interactive map)</p>
+        </button>
+        <br /> <br />
+        <div>
+            <img style="width:200px; height:200px;" src="../Pics/MarathonPhotos/banco-banespa.jpg" />
+            <img style="width:200px; height:200px;" src="../Pics/MarathonPhotos/ibirapuera-park-lake.jpg" />
+            <br /><br />
+            <img style="width:200px; height:200px;" src="../Pics/MarathonPhotos/marathon-image.jpg" />
+            <img style="width:200px; height:200px;" src="../Pics/MarathonPhotos/teatro-municipal.jpg" />
+        </div>
+    </div>
+
+    <div class="col half" style="float: right;">
+        <p style="text-align: justify; overflow-wrap:normal; float:right;">
+            Marathon Skills is a running festival held every year in a different part of the world.
+            There can be three events: a Full Marathon, Half Marathon and a Fun Run - so the festival
+            caters to all abilities and experience.
+            <br /><br />
+
+            In past years, marathons have been held in Osaka, Japan (2014); Leipzig, Germany (2013);
+            Hanoi, Vietnam (2012) and York, England (2011).
+            <br /><br />
+
+            This year, Marathon Skills is very excited to be partnering with São Paulo, Brazil
+            to put on the biggest running festival yet. Brazil's financial centre and the biggest city
+            in South America, São Paulo will be on display to the thousands of runners who will weave
+            their way past skyscrapers, green parks and magnificent architecture.
+            <br /><br />
+
+            This festival has attracted a record number of runners from all over the world.
+            Attention will be on the contingents from Kenya and Jamaica as we hope to see Dawit Admasu's
+            2014 São Silvestre time broken. (The Ethiopian completed the race in 45 minutes 4 seconds.)
+            <br /><br />
+
+            The carnival atmosphere promises entertainment for all spectators as well as a party to
+            round off the festivities in Ibirapuera Park.
+            <br /><br />
+
+            The events:
+            <br />
+            - The "Samba" Full Marathon will start at Rua dos Americanos at 6am on 5 September 2015.
+            <br />
+            - The "Jongo" Half Marathon will start at 7am on 6 September 2015. Runners will depart from near the intersection of Rua Ciniciata Braga and Avenida Brigadeiro Luís Antõnio.
+            <br />
+            - The "Capoeira" 5km Fun Run will start at 3 pm on 6 September 2015. Our fun runners will start from the UNINOVE Memorial.
+            <br /><br />
+            Thank you to all the volunteers who will be helping!
+
+    </div>
+
+</div>
+
+@for (int i = 0; i <= 22; i++)
+{
+    <br />
+}
+
+
+
+

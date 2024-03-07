@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Marathon Skills 2015 - Login</title>
+    <link href="../Styles/assets.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="bodySection">
+        <h2>Login Form</h2>
+        <h5>Please log in to the system using your email address and password.</h5>
+
+        <form id="frmParty" method="POST">
+            <input type="hidden" name="id" value="" />
+            <table>
+                <tr>
+                    <td>
+                        <label for="email">Email: </label><span class="val_email"></span>
+                    </td>
+                    <td>
+                        <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                               placeholder="Enter your email address"
+                               type="email" name="email" value="" id="email" class="txt-fld" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pass">Password: </label><span class="val_pass"></span>
+                    </td>
+                    <td>
+                        <input type="password" placeholder="Enter your password"
+                               name="pass" value="" id="pass" class="txt-fld" required />
+                    </td>
+                </tr>
+            </table>
+
+            <input type="hidden" name="action_type" value="add" />
+            <div style="text-align: center; padding-top: 30px;">
+                <input class="btn" type="submit" name="login" id="login" value="Login" />
+            </div>
+            <br />
+        </form>
+    </div>
+
+</body>
+</html>

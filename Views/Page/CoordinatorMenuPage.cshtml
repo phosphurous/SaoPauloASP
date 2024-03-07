@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "CoordinatorMenuPage";
+}
+
+<link href="~/Styles/assets.css" rel="stylesheet" />
+
+<div>
+    @* Margin: Top Right Bottom Left *@
+    <button type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px;
+display: inline-block; border-radius: 5px; outline: none; background-color: #f2f2f2"
+            onclick="location.href='@Url.Action("Index", "Home")'">
+        Back
+    </button>
+
+    @* Margin: Top Right Bottom Left *@
+    <button type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px;
+border-radius: 5px; outline: none; background-color: #f2f2f2; float: right;"
+            onclick="location.href='@Url.Action("LoginPage", "Login")'">
+        Logout
+    </button>
+</div>
+
+<hr />
+<h2 style="text-align: center;">Coordinator menu</h2>
+
+<div class="row1">
+    <div class="col half">
+        <button id="MenuBtn" type="button" style="font-style:italic">Runners</button>
+    </div>
+
+    <div class="col half">
+        <button id="MenuBtn" type="button" style="font-style:italic" onclick="location.href=
+                '@Url.Action("CoordSponsorOverview", "Page")'">Sponsorship</button>
+    </div>
+</div>
+
+

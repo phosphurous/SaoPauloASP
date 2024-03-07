@@ -1,0 +1,129 @@
+﻿@model IEnumerable<MSSaoPauloASP.NET.EF.Charity>
+
+@{
+    ViewBag.Title = "Marathon Skills 2015 - Register for an event";
+}
+
+<script type="text/javascript">
+    function handleBoxSelect() {
+        var regCost = document.getElementById("regCost");
+        var currentValue = parseInt(regCost.value);
+
+        currentValue = currentValue + regCost.parseInt();
+
+        regCost.value = currentValue;
+    }
+</script>
+
+<div class="container">
+    <h1 class="text-center">Register for an event</h1>
+    <br />
+    <p class="text-center description">
+        Please fill out all of the following information to register for events in the Skills
+        Marathon 2015 being held in Sao Paulo, Brazil. You will be contacted after you have
+        registered to organise payment and other details.
+    </p>
+</div>
+<br />
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-2">
+            <h3 class="text-center"><strong>Competition events</strong></h3>
+            <br />
+            <form>
+                <div class="form-group field">
+                    <div class="row col-lg-12">
+                        <div class="checkbox f-20">
+                            <label>
+                                <input type="checkbox" value="145" id="regCost" onclick="handleBoxSelect();">
+                                42km Full Marathon ($145)
+                            </label>
+                        </div>
+                        <div class="checkbox f-20">
+                            <label>
+                                <input type="checkbox" value="" id="checkbox2">
+                                21km Half marathon ($75)
+                            </label>
+                        </div>
+                        <div class="checkbox f-20">
+                            <label>
+                                <input type="checkbox" value="" id="checkbox3">
+                                5km Fun run ($20)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <h3 class="text-center"><strong>Sponsorship details</strong></h3>
+                <br />
+
+                <div class="form-group field">
+                    <div class="row col-lg-5">
+                        <label for="runnerCharity">Charity:</label>
+                    </div>
+                    <div class="row col-lg-7">
+                        <div class="form-inline">
+                            <select class="form-control" id="sel1">
+                                @foreach (var item in Model)
+                                {
+                                    <option>@item.CharityName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row col-lg-1 col-lg-offset-1">
+                        <span class="glyphicon glyphicon-info-sign" style="font-size: 25px;"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group field">
+                    <div class="row col-lg-5">
+                        <label for="runnerTarget">Target to raise:</label>
+                    </div>
+                    <div class="row col-lg-7">
+                        <input type="text" class="form-control" id="runnerTarget" placeholder="e.g. $500" required>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-5 col-lg-offset-1">
+            <h3 class="text-center"><strong>Race kit options</strong></h3>
+            <br />
+            <div class="form-group field">
+                <div class="row col-lg-12">
+                    <div class="radio f-20">
+                        <label><input type="radio" value=""><strong>Option A ($0): </strong>Runner's bib + RFID bracelet.</label>
+                    </div>
+                    <div class="radio f-20">
+                        <label><input type="radio" value=""><strong>Option B ($20): </strong>Option A + hat + water bottle.</label>
+                    </div>
+                    <div class="radio f-20">
+                        <label><input type="radio" value=""><strong>Option C ($45): </strong>Option B + t-shirt + souvenir booklet.</label>
+                    </div>
+                </div>
+                <br />
+                <div class="row col-lg-12 text-center">
+                    <h3><strong>Registration cost</strong></h3>
+                    <input style="text-align:center;" value="$0" class="currentValue" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div style="padding-left: 150px;" class="row">
+        <div class="col-lg-6 col-lg-offset-2">
+            <button class="btn btn-default btn-left btn-action" onclick="location.href=
+            '@Url.Action("RegisterEventConfirmPage", "Page")'">
+                Register
+            </button>
+            <button class="btn btn-default btn-action" onclick="location.href=
+            '@Url.Action("RunnerMenuPage", "Page")'">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>

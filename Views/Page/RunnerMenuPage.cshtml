@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Marathon Skills 2015 - Runner menu";
+}
+
+<link href="~/Styles/assets.css" rel="stylesheet" />
+
+<div>
+    @* Margin: Top Right Bottom Left *@
+    <button type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px;
+display: inline-block; border-radius: 5px; outline: none; background-color: #f2f2f2"
+            onclick="location.href='@Url.Action("Index", "Home")'">
+        Back
+    </button>
+
+    @* Margin: Top Right Bottom Left *@
+    <button type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px; 
+border-radius: 5px; outline: none; background-color: #f2f2f2; float: right;"
+            onclick="location.href='@Url.Action("LoginPage", "Login")'">
+        Logout
+    </button>
+</div>
+
+<h2 style="text-align: center;">Runner menu</h2>
+
+<div class="row1">
+    <div class="col half">
+        <button id="MenuBtn" type="button" style="font-style:italic"
+                onclick="location.href='@Url.Action("RegisterEventPage", "Page")'">Register for an event</button>
+        <br /><br />
+
+        <button id="MenuBtn" type="button" style="font-style:italic" 
+                onclick="location.href='@Url.Action("EditProfilePage", "Page", new { email = Session["Email"].ToString() }, null)'">Edit your profile</button>
+        <br /><br />
+
+        <button style="font-style:italic" id="MenuBtn"
+                data-toggle="modal" data-target=".bootstrapmodal">
+            Contact information
+        </button>
+
+        @* Start of Pop Up *@
+        <div class="modal fade bootstrapmodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button data-dismiss="modal" class="close"><span>&times;</span></button>
+                        <div class="modal-title">Contact Information</div>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>
+                            For more information about Marathon Skills, please contact the coordinators
+                            using these contact details.
+                        </p>
+                        <p><strong>Phone: </strong>+55 11 9988 7766</p>
+                        <p><strong>Email: </strong>coordinators@marathonskills.org</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @* End of Pop Up *@
+    </div>
+
+    <div class="col half">
+        <button id="MenuBtn" type="button" style="font-style:italic">My race results</button>
+        <br /><br />
+
+        <button id="MenuBtn" type="button" style="font-style:italic">My sponsorship</button>
+        <br /><br />
+    </div>
+
+</div>
+
+@for (int i = 0; i <= 5; i++)
+{
+    <br />
+}
+
+
+
+
+
+

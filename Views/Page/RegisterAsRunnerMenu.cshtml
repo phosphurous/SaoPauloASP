@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Marathon Skills 2015 - Register as a runner";
+}
+
+<link href="~/Styles/assets.css" rel="stylesheet" />
+
+<div style="display: inline;">
+    @* Margin: Top Right Bottom Left *@
+    <button id="MenuBtn" type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px; 
+position: relative;"
+            onclick="location.href='@Url.Action("Index", "Home")'">
+        Back
+    </button>
+    <h5 style="right:5px;">Marathon Skills 2015</h5>
+</div>
+
+    <div style="text-align: center;">
+        <button id="MenuBtn" type="button" style="font-style:italic; width: 300px; height: 60px;" 
+                onclick="location.href='@Url.Action("LoginPage", "Login")'"
+                >I have competed before</button>
+        <br /><br />
+
+        <button id="MenuBtn" type="button" style="font-style:italic; width: 300px; height: 60px;" 
+                onclick="location.href='@Url.Action("RunnerRegistrationPage", "RunnerRegistration")'"
+                >I am a new competitor
+        </button>
+    </div>
+@for (int i = 0; i <= 8; i++)
+{
+    <br />
+}
+

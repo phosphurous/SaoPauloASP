@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "Marathon Skills 2015 - Interactive map";
+}
+
+<div>
+    @* Margin: Top Right Bottom Left *@
+    <button id="MenuBtn" type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px;"
+            onclick="location.href='@Url.Action("Index", "Home")'">
+        Back
+    </button>
+</div>
+
+<link href="~/Styles/assets.css" rel="stylesheet" />
+
+<script type="text/javascript">
+
+    //Show
+    function handleClick() {
+        $('#data2').hide();
+        $('#data').show();
+    }
+    function handleClick2() {
+        $('#data').hide();
+        $('#data2').show();
+    }
+
+    //Hide
+    function handleSecondClick() {
+        $('#data').hide();
+    }
+    function handleSecondClick2() {
+        $('#data2').hide();
+    }
+
+</script>
+
+<script type='text/javascript'>
+    window.onload = function () {
+        document.getElementById("data").style.display = 'none';
+        document.getElementById("data2").style.display = 'none';
+    }
+</script>
+
+<style>
+    #show {
+        visibility: visible;
+        -webkit-user-select: none; /* Chrome/Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
+    }
+</style>
+
+<h2 style="text-align: center;">Interactive map for Marathon Skills 2015</h2>
+
+<div class="row1">
+    <div class="col half" style="float:left">
+        <div id="image_map">
+            @*<map name="map_example">
+                    <area href="https://facebook.com" alt="Facebook" target="_blank" shape=poly coords="30,100, 140,50, 290,220, 180,280">
+                    <area href="https://en.wikipedia.org/wiki/Social_media" target="_blank" alt="Wikipedia Social Media Article" shape=poly coords="190,75, 200,60, 495,60, 495,165, 275,165">
+                </map>*@
+            <map name="map_example">
+                <area id="show" onclick="handleClick()" target="" title="" coords="60,25,14" shape="circle">
+                <area id="show" onclick="handleClick2()" target="" title="" coords="459,24,15" shape="circle">
+                <area target="" alt="Image3" title="" href="" coords="110,150,14" shape="circle">
+                <area target="" alt="Image4" title="" href="" coords="270,192,13" shape="circle">
+                <area target="" alt="Image5" title="" href="" coords="455,305,12" shape="circle">
+                <area target="" alt="Image6" title="" href="" coords="206,375,11" shape="circle">
+            </map>
+            <img src="../Pics/marathon-skills-2015-marathon-map.jpg"
+                 alt="image map example" width=500 height=400 usemap="#map_example">
+        </div>
+    </div>
+
+    <div class="col half" style="float: right;">
+        <div id="data" style="border: solid 1px black;">
+            <button style="float:right; outline:none;" onclick="handleSecondClick()">&times;</button>
+            <br />
+            <div style="text-align: center;">
+                <p style="font-weight:bold">Checkpoint 1</p>
+                <p>Features listed here:</p>
+                <br />
+                <div style="text-align:justify; align-content:center">
+                    <p>- Drink stand</p>
+                    <p>- Energy bars</p>
+                    <p>- Toilets</p>
+                    <p>- Medical services</p>
+                </div>
+            </div>
+        </div>
+        <div id="data2">
+            <button style="float:right; outline:none;" onclick="handleSecondClick2()">&times;</button>
+            <br />
+            Test Button 2
+        </div>
+    </div>
+    @*<p style="text-align: right; overflow-wrap:normal;">
+                The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+            </p>
+        </div>*@
+
+</div>
+
+@for (int i = 0; i <= 20; i++)
+{
+    <br />
+}

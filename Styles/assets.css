@@ -1,0 +1,141 @@
+﻿body, p, button {
+    font-family: Arial;
+}
+
+.header {
+    text-align: center;
+}
+
+.row {
+    text-align: center;
+}
+
+#btn1 {
+    border-radius: 5px;
+    height: 50px;
+    width: 220px;
+    outline: none;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    background-color: #f2f2f2;
+}
+
+#btn2 {
+    border-radius: 5px;
+    width: 160px;
+    height: 50px;
+    outline: none;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    background-color: #f2f2f2;
+}
+
+#btnLogin {
+    float: right;
+    margin-right: 20px;
+    border-radius: 5px;
+    outline: none;
+    height: 40px;
+    width: 100px;
+    background-color: #f2f2f2;
+}
+
+.bodySection {
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    text-align: center;
+}
+
+/*PlaceHolder Italic*/
+::-webkit-input-placeholder {
+    font-style: italic;
+}
+
+:-moz-placeholder {
+    font-style: italic;
+}
+
+::-moz-placeholder {
+    font-style: italic;
+}
+
+:-ms-input-placeholder {
+    font-style: italic;
+}
+/*End Of PlaceHolder Italic*/
+
+/*SponsorPage CSS*/
+.sponsorBody
+{
+    text-align: center;
+}
+
+#SponRunnertableForm
+{
+    text-align: center;
+}
+
+.col 
+{
+    height: 100px;
+}
+
+.col.half {
+    width: 50%;
+    text-align: center;
+}
+
+.row1 {
+    width: 100%;
+    display: flex;
+}
+
+#colHeading
+{
+    font-weight: bold;
+}
+
+/*For Login Page*/
+#LoginPageBtn {
+    display: inline-block;
+    border-radius: 5px;
+    width: 40%;
+    outline: none;
+    background-color: #f2f2f2;
+}
+
+/*For Menu Button*/
+#MenuBtn {
+    display: inline-block;
+    border-radius: 5px;
+    width: 40%;
+    height: 50%;
+    outline: none;
+    background-color: #f2f2f2;
+}
+
+#logoutBtn {
+    display: inline-block;
+    border-radius: 5px;
+    outline: none;
+    width: 100px;
+    height: 50px;
+    margin: 10px auto 10px 10px;
+    float: right;
+    background-color: #f2f2f2;
+}
+
+#charityTable {
+    border: solid 1px black;
+}
+
+
+
+/*td, th {
+    border: solid 1px black;
+}*/
+
+

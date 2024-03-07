@@ -1,0 +1,156 @@
+﻿@*@using MSSaoPauloASP.NET.Models
+@model DataAccess.GetRunnerManagementViewModel();*@
+@{
+    ViewBag.Title = "SponsorARunnerPage";
+}
+
+<title>Marathon Skills 2018 - Sponsor a runner</title>
+
+<link href="~/Styles/assets.css" rel="stylesheet" />
+
+<script type="text/javascript">
+
+    function handleButtonAdd() {
+        var textField = document.getElementById("textField");
+        var currentValue = parseInt(textField.value);
+
+        // Add 10
+        currentValue = currentValue + 10;
+
+        // Put it back with the new +10'd value
+        textField.value = currentValue;
+    }
+
+    function handleButtonMinus() {
+        var textField = document.getElementById("textField");
+        var currentValue = parseInt(textField.value);
+
+        // Minus 10
+        currentValue = currentValue - 10;
+
+        // Put it back with the new -10'd value
+        textField.value = currentValue;
+    }
+</script>
+
+
+<div class="sponsorBody">
+    <h2 style="font-weight:normal">Sponsor a runner</h2>
+    <p>
+        Please choose the runner you would like
+        to sponsor and the amount you would like to sponsor them for. Thank you for your support of
+        the runners and their charities!
+    </p>
+</div>
+
+<body>
+    <div class="row1">
+
+        <div class="col half">
+            <p id="colHeading">Sponsorship Details</p>
+
+            <form id="frmParty" method="POST">
+                <div id="SponRunnertableForm">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="name">Your name: </label><span class="val_name"></span>
+                            </td>
+                            <td>
+                                <input placeholder="Your name"
+                                       type="text" name="name" value="" id="name" class="txt-fld" required />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="runner">Runner: </label><span class="val_runner"></span>
+                            </td>
+                            <td>
+                                @Html.DropDownList("Runners", ViewBag.runnerlistname as SelectList,
+                               "Select A Runner")
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="cardName">Name on Card: </label><span class="val_card"></span>
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Credit card holder"
+                                       name="cardName" value="" id="cardName" class="txt-fld" required />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="cardNo">Credit Card #: </label><span class="val_cardno"></span>
+                            </td>
+                            <td>
+                                <input type="number" pattern="^[0-9]{16}$" title="E.g 1234 5678 2412 1234"
+                                       placeholder="1234 1234 1234 1234"
+                                       name="cardNo" value="" id="cardNo" class="txt-fld" required />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="expDate">Expiry Date: </label><span class="val_expDate"></span>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="01" style="width: 55px; display:inline;"
+                                       name="expDate" value="" id="expDate" class="txt-fld" required />
+
+                                <input type="number" placeholder="2017" style="float:right; width: 100px;
+                                    display:inline;" name="expDate2" value="" id="expDate2"
+                                       class="txt-fld" required />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="cvcNo">CVC: </label><span class="val_cvcNo"></span>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="123" pattern="^[0-9]{3}$"
+                                       name="cvcNo" value="" id="cvcNo" class="txt-fld"
+                                       max="999" required />
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="col half">
+            <p id="colHeading">Charity</p>
+
+            <p>Save The Cats Fund</p>
+
+            <p id="colHeading">Amount to donate</p>
+
+            <label></label>
+            <input style="text-align:center;" value="0" id="textField" />
+            <br /><br />
+            <button onClick="handleButtonAdd()">+</button>
+            <button onClick="handleButtonMinus()">-</button>
+
+            <br /><br />
+            <form action="/Pages/SponsorConfirmationPage.html" method="get">
+                <button id="btn2">Pay now</button>
+            </form>
+            <form action="../" method="get">
+                <button id="btn2">Cancel</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+@for (int i = 0; i <= 8; i++)
+{
+    <br />
+}
+
+

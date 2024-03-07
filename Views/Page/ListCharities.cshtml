@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MSSaoPauloASP.NET.EF.Charity>
+
+@{
+    ViewBag.Title = "ListCharities";
+}
+<link href="~/Styles/assets.css" rel="stylesheet" />
+
+<h2>ListCharities</h2>
+
+<div>
+    @* Margin: Top Right Bottom Left *@
+    <button id="MenuBtn" type="button" style="width: 100px; height: 50px; margin: 10px auto 10px 10px;"
+            onclick="location.href='@Url.Action("FindMoreInfoPage", "Home")'">
+        Back
+    </button>
+</div>
+
+<h2 style="text-align: center;">List of charities</h2>
+
+<p style="text-align: center;">
+    This is a list of all the charities that are being supported through
+    Marathon Skills 2015. Thank you for helping to support them by sponsoring runners!
+</p>
+
+<table style="width: 100%">
+    @foreach (var item in Model)
+    {
+        @* For 1st Charity *@
+        <tr>
+            <th id="charityTable" rowspan="2"><img src="../Pics/@item.CharityLogo" style="width:200px; height:100px;" /></th>
+            <td id="charityTable">@item.CharityName</td>
+        </tr>
+        <tr>
+            <td id="charityTable">@item.CharityDescription</td>
+        </tr>
+
+    }
+</table>
+
+
+
+
